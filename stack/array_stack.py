@@ -1,4 +1,4 @@
-class StackArray:
+class ArrayStack:
     """
     A stack implementation using an array(list) as underlying data structure.
 

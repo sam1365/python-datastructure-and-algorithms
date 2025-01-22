@@ -49,8 +49,8 @@ class ArrayQueue:
         if self.is_empty():
             raise Exception('Queue is empty')
         if self._size < (len(self._queue) / self._shrink_factor):
-
-            new_capacity = math.ceil(len(self._queue) / self._shrink_factor)
+            factor = self._shrink_factor / 2
+            new_capacity = math.ceil(len(self._queue) / factor)
             self._set_queue(new_capacity)
 
     def _set_queue(self, new_capacity):

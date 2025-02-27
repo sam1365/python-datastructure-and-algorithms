@@ -7,6 +7,9 @@ class TestSingleLinkedList:
     def setup(self):
         self.sll = SingleLinkedList()
 
+    def test_is_empty(self):
+        assert self.sll.is_empty() is True
+        
     def test_insert_node_to_head(self):
         """Test inserting node at the head of the list."""
 

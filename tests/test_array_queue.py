@@ -6,3 +6,6 @@ class TestArrayQueue:
     @pytest.fixture(autouse=True)
     def setup(self):
         self.array_queue = ArrayQueue()
+
+    def test_is_empty(self):
+        assert self.array_queue.is_empty() is True

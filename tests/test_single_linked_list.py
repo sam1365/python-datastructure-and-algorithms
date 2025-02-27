@@ -30,3 +30,14 @@ class TestSingleLinkedList:
         assert self.sll.head() == 11
         assert self.sll.tail() == 17
         assert len(self.sll) == 3
+
+    def test_remove_head(self):
+        """Test remove head node of the list."""
+
+        self.sll.insert_node_to_head(11)
+        self.sll.insert_node_to_head(13)
+        self.sll.insert_node_to_head(17)
+
+        assert self.sll.remove_head() == 17
+        assert self.sll.head() == 13
+        assert len(self.sll) == 2

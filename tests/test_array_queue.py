@@ -39,3 +39,8 @@ class TestArrayQueue:
 
         self.array_queue.enqueue(2)
         assert self.array_queue.peek() == 1
+
+    def test_peak_is_empty(self):
+        """Test peak when queue is empty in the array queue."""
+        with pytest.raises(Exception, match='Queue is empty') as e:
+            self.array_queue.peek()

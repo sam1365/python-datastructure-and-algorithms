@@ -30,3 +30,12 @@ class TestArrayQueue:
         assert self.array_queue.is_empty() is False
         assert len(self.array_queue) == 2
         assert self.array_queue.peek() == 2
+
+    def test_peak(self):
+        """Test peak in the array queue."""
+
+        self.array_queue.enqueue(1)
+        assert self.array_queue.peek() == 1
+
+        self.array_queue.enqueue(2)
+        assert self.array_queue.peek() == 1

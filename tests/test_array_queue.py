@@ -19,3 +19,14 @@ class TestArrayQueue:
         assert self.array_queue.is_empty() is False
         assert len(self.array_queue) == 2
         assert self.array_queue.peek() == 1
+
+    def test_dequeue(self):
+        """Test enqueue elements in the array queue."""
+
+        self.array_queue.enqueue(1)
+        self.array_queue.enqueue(2)
+        self.array_queue.enqueue(3)
+        assert self.array_queue.dequeue() == 1
+        assert self.array_queue.is_empty() is False
+        assert len(self.array_queue) == 2
+        assert self.array_queue.peek() == 2

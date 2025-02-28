@@ -42,11 +42,24 @@ class TestArrayQueue:
 
     def test_peak_is_empty(self):
         """Test peak when queue is empty in the array queue."""
+
         with pytest.raises(Exception, match='Queue is empty') as e:
             self.array_queue.peek()
 
 
     def test_increase_capacity(self):
+        """ Test increase capacity of the array queue."""
+
         for i in range(13):
             self.array_queue.enqueue(i)
         assert len(self.array_queue) == 13
+
+    def test_shrink(self):
+        """ Test shrinking the array queue."""
+
+        for i in range(19):
+            self.array_queue.enqueue(i)
+        for i in range(17):
+            self.array_queue.dequeue()
+        assert len(self.array_queue) == 2
+

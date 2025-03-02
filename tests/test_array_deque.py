@@ -48,3 +48,10 @@ class TestArrayDeque:
         for i in range(17):
             self.array_deque.remove_front()
         assert len(self.array_deque) == 3
+
+    def test_clear_deque(self):
+        for i in range(3):
+            self.array_deque.add_front(i)
+        assert len(self.array_deque) == 3
+        self.array_deque.clear_deque()
+        assert len(self.array_deque) == 0

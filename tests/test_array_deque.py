@@ -23,3 +23,9 @@ class TestArrayDeque:
         self.array_deque.add_rear(11)
         assert len(self.array_deque) == 2
         assert self.array_deque.rear() == 11
+
+    def test_remove_front(self):
+        self.array_deque.add_front(17)
+        self.array_deque.add_front(11)
+        assert self.array_deque.remove_front() == 11
+        assert len(self.array_deque) == 1

@@ -40,6 +40,10 @@ class TestArrayDeque:
         assert self.array_deque.remove_rear() == 11
         assert len(self.array_deque) == 1
 
+    def test_remove_rear_is_empty(self):
+        with pytest.raises(IndexError, match='Empty deque'):
+            self.array_deque.remove_rear()
+
     def test_increase_capacity(self):
         for i in range(13):
             self.array_deque.add_front(i)

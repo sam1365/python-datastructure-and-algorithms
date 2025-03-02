@@ -30,6 +30,10 @@ class TestArrayDeque:
         assert self.array_deque.remove_front() == 11
         assert len(self.array_deque) == 1
 
+    def test_remove_front_is_empty(self):
+        with pytest.raises(IndexError, match='Empty deque'):
+            self.array_deque.remove_front()
+
     def test_remove_rear(self):
         self.array_deque.add_rear(17)
         self.array_deque.add_rear(11)
@@ -55,3 +59,4 @@ class TestArrayDeque:
         assert len(self.array_deque) == 3
         self.array_deque.clear_deque()
         assert len(self.array_deque) == 0
+

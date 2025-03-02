@@ -40,3 +40,11 @@ class TestArrayDeque:
         for i in range(13):
             self.array_deque.add_front(i)
         assert len(self.array_deque) == 13
+
+    def test_shrink(self):
+        for i in range(20):
+            self.array_deque.add_front(i)
+
+        for i in range(17):
+            self.array_deque.remove_front()
+        assert len(self.array_deque) == 3

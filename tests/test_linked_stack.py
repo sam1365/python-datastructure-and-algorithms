@@ -10,3 +10,10 @@ class TestLinkedStack:
 
     def test_is_empty(self):
         assert self.linked_stack.is_empty() is True
+
+    def test_push(self):
+        self.linked_stack.push(29)
+        self.linked_stack.push(23)
+        assert self.linked_stack.is_empty() is False
+        assert len(self.linked_stack) == 2
+        assert self.linked_stack.peek() == 23

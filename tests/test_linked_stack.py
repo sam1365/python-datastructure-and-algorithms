@@ -24,3 +24,7 @@ class TestLinkedStack:
         assert self.linked_stack.is_empty() is False
         assert len(self.linked_stack) == 2
         assert self.linked_stack.pop() == 23
+
+    def test_peek_is_empty(self):
+        with pytest.raises(Exception, match='Stack is empty'):
+            self.linked_stack.peek()

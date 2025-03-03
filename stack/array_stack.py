@@ -17,21 +17,32 @@ class ArrayStack:
         self._stack = []
 
     def __len__(self):
+        """Return the size of the stack."""
+
         return len(self._stack)
 
     def pop(self):
+        """Remove and return the item from the top of the stack."""
+
         if len(self._stack) == 0:
             raise Exception("Stack is empty")
         else:
             return self._stack.pop()
+
     def push(self, item):
+        """Add an item to the top of the stack."""
+
         self._stack.append(item)
 
     def peek(self):
+        """Return the item from the top of the stack."""
+
         if len(self._stack) == 0:
             raise Exception("Stack is empty")
         else:
             return self._stack[-1]
 
     def is_empty(self):
+        """Check if the stack is empty."""
+
         return len(self._stack) == 0

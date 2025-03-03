@@ -17,3 +17,10 @@ class TestLinkedStack:
         assert self.linked_stack.is_empty() is False
         assert len(self.linked_stack) == 2
         assert self.linked_stack.peek() == 23
+
+    def test_pop(self):
+        self.linked_stack.push(29)
+        self.linked_stack.push(23)
+        assert self.linked_stack.is_empty() is False
+        assert len(self.linked_stack) == 2
+        assert self.linked_stack.pop() == 23

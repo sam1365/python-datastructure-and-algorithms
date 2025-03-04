@@ -14,3 +14,12 @@ class TestLinkedQueue:
 
         assert self.linked_queue.is_empty() is True
 
+    def test_enqueue(self):
+        """Test enqueue method for adding elements to the queue."""
+
+        self.linked_queue.enqueue(1)
+        self.linked_queue.enqueue(2)
+        self.linked_queue.enqueue(3)
+        assert self.linked_queue.peek() == 1
+        assert self.linked_queue.is_empty() is False
+        assert len(self.linked_queue) == 3

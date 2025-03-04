@@ -13,3 +13,4 @@ class TestLinkedQueue:
         """Test is_empty."""
 
         assert self.linked_queue.is_empty() is True
+

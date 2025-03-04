@@ -23,3 +23,11 @@ class TestLinkedQueue:
         assert self.linked_queue.peek() == 1
         assert self.linked_queue.is_empty() is False
         assert len(self.linked_queue) == 3
+
+    def test_dequeue(self):
+        self.linked_queue.enqueue(17)
+        self.linked_queue.enqueue(13)
+        self.linked_queue.enqueue(11)
+        assert self.linked_queue.peek() == 17
+        assert self.linked_queue.dequeue() == 17
+        assert len(self.linked_queue) == 2

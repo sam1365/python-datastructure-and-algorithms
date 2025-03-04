@@ -58,7 +58,7 @@ class LinkedQueue:
 
         if self.is_empty():
             raise Exception('Queue is empty')
-        element = self._head.element
+        element = self._head.data
         self._head = self._head.next
         self._size -= 1
         if self.is_empty():

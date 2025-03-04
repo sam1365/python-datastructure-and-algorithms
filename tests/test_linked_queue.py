@@ -10,7 +10,6 @@ class TestLinkedQueue:
         self.linked_queue = LinkedQueue()
 
     def test_is_empty(self):
-        """Test is_empty raises correct exception if queue is empty."""
+        """Test is_empty."""
 
-        with pytest.raises(Exception, match='queue is empty'):
-            self.linked_queue.is_empty()
+        assert self.linked_queue.is_empty() is True

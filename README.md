@@ -32,27 +32,29 @@ Test cases for correctness verification.
 
 1. Clone the repository:
 
-git clone https://github.com/sam1365/python-datastructure-and-algorithms.git
+    git clone https://github.com/sam1365/python-datastructure-and-algorithms.git
 
 2. Navigate to the project directory:
 
-cd python-datastructure-and-algorithms
+    cd python-datastructure-and-algorithms
 
 3. Create a virtual environment:
 
-python -m venv /path/to/new/virtual/environment
+    python -m venv /path/to/new/virtual/environment
 
 4. Activate virtual environment:
 
     a. on linux: source /path/to/new/virtual/environment/bin/activate
+
     b. on windows if you are using cmd:  .\path\to\new\virtual\environment\Scripts\activate.bat
+
 5. Install packages:
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
 
 6. Run jupyter:
 
-  jupyter lab
+    jupyter lab
 
 
 ## Contributing

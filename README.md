@@ -9,13 +9,13 @@ Documented codes with doc string.
 Test cases for correctness verification.
 
 ## Folder Structure
-/deque_data_structure
-/lined_list_data_structure
-/queue_data_structure
-/stack
-/tests
-/tree_data_structure
-datastructure_and_algorithms.ipynb
+  /deque_data_structure
+  /lined_list_data_structure
+  /queue_data_structure
+  /stack
+  /tests
+  /tree_data_structure
+  datastructure_and_algorithms.ipynb
 
 ## Setup & Usage
 

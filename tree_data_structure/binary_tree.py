@@ -1,3 +1,6 @@
+from twisted.web import _element
+
+from tree_data_structure.abstract_tree import TreeAbstractPosition
 class BinaryTreeNode:
     """
     Node class for storing a node in a binary tree.
@@ -22,3 +25,29 @@ class BinaryTreeNode:
         self._parent = parent
         self._left = left
         self._right = right
+
+
+class BinaryTreePosition(TreeAbstractPosition):
+    """
+    Position class for Representing location of an element in a binary tree.
+
+    Attributes:
+        _node: node of the element.
+        _container: container of the element.
+    """
+
+    def __init__(self, container,  node):
+        """Initializes the Position class."""
+
+        self._container = container
+        self._node = node
+
+    def element(self):
+        """Returns the element of the position."""
+
+        return self._node._element
+
+    def __eq__(self, other):
+        """Returns true if other is a position that represents same location."""
+
+        return type(other) is type(self) and other._node is self._node

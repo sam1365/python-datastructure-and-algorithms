@@ -286,3 +286,19 @@ class LinkedBinaryTree(AbstractBinaryTree):
             node._right = tree2._root
             tree2._root = None
             tree1._size = 0
+
+    def preorder(self):
+        """Preorder traversal of the binary tree."""
+
+        if not self.is_empty():
+            for p in self._preorder_subtree(self.root()):
+                yield p
+
+    def _preorder_subtree(self, p):
+        """Preorder traversal of subtree routed at position p."""
+
+        yield p
+        for child in p.children(p):
+            for result in self._preorder_subtree(child):
+                yield result
+

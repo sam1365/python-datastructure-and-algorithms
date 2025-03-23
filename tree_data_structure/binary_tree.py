@@ -1,5 +1,6 @@
 from tree_data_structure.abstract_tree import TreeAbstractPosition
 from tree_data_structure.abstract_binary_tree import AbstractBinaryTree
+from queue_data_structure.linked_queue import LinkedQueue
 
 
 class BinaryTreeNode:
@@ -316,3 +317,15 @@ class LinkedBinaryTree(AbstractBinaryTree):
             for result in self._postorder_subtree(child):
                 yield result
         yield p
+
+    def breadthfirst(self):
+        """Breadth-first traversal of the binary tree."""
+
+        if not self.is_empty():
+            linked_queue = LinkedQueue()
+            linked_queue.enqueue(self.root())
+            while not linked_queue.is_empty():
+                p = linked_queue.dequeue()
+                yield p
+                for child in p.children(p):
+                    linked_queue.enqueue(child)

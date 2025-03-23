@@ -302,3 +302,17 @@ class LinkedBinaryTree(AbstractBinaryTree):
             for result in self._preorder_subtree(child):
                 yield result
 
+    def postorder(self):
+        """Postorder traversal of the binary tree."""
+
+        if not self.is_empty():
+            for p in self._postorder_subtree(self.root()):
+                yield p
+
+    def _postorder_subtree(self, p):
+        """Postorder traversal of subtree routed at position p."""
+
+        for child in p.children(p):
+            for result in self._postorder_subtree(child):
+                yield result
+        yield p

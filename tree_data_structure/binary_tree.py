@@ -329,3 +329,22 @@ class LinkedBinaryTree(AbstractBinaryTree):
                 yield p
                 for child in p.children(p):
                     linked_queue.enqueue(child)
+
+    def inorder(self):
+        """Inorder traversal of the binary tree."""
+
+        if not self.is_empty():
+            for p in self._inorder_subtree(self.root()):
+                yield p
+
+    def _inorder_subtree(self, p):
+        """Inorder traversal of subtree routed at position p."""
+
+        if self.left(p) is not None:
+            for other in self._inorder_subtree(self.left(p)):
+                yield other
+        yield p
+
+        if self.right(p) is not None:
+            for other in self._inorder_subtree(self.right(p)):
+                yield other

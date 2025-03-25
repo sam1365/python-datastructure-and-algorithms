@@ -23,3 +23,9 @@ class TestLinkedBinaryTree:
         assert self.linked_binary_tree.is_empty() is False
         assert self.linked_binary_tree.root() is not None
         assert isinstance(self.linked_binary_tree.root(), BinaryTreePosition)
+
+    def test_root(self):
+        assert self.linked_binary_tree.root() is None
+        self.linked_binary_tree.add_root(17)
+        assert self.linked_binary_tree.root() is not None
+        assert isinstance(self.linked_binary_tree.root(), BinaryTreePosition)

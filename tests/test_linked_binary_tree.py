@@ -29,3 +29,13 @@ class TestLinkedBinaryTree:
         self.linked_binary_tree.add_root(17)
         assert self.linked_binary_tree.root() is not None
         assert isinstance(self.linked_binary_tree.root(), BinaryTreePosition)
+
+    def test_add_left(self):
+        assert self.linked_binary_tree.root() is None
+        self.linked_binary_tree.add_root(17)
+        assert self.linked_binary_tree.root() is not None
+        self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 19)
+        assert self.linked_binary_tree.left(self.linked_binary_tree.root()) is not None
+        assert isinstance(self.linked_binary_tree.left(self.linked_binary_tree.root()),
+                          BinaryTreePosition)
+        assert self.linked_binary_tree.left(self.linked_binary_tree.root()).element() == 19

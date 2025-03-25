@@ -49,3 +49,10 @@ class TestLinkedBinaryTree:
         assert isinstance(self.linked_binary_tree.right(self.linked_binary_tree.root()),
                           BinaryTreePosition)
         assert self.linked_binary_tree.right(self.linked_binary_tree.root()).element() == 23
+
+    def  test_replace(self):
+        assert self.linked_binary_tree.root() is None
+        self.linked_binary_tree.add_root(17)
+        assert self.linked_binary_tree.root() is not None
+        self.linked_binary_tree.replace(self.linked_binary_tree.root(), 13)
+        assert self.linked_binary_tree.root().element() == 13

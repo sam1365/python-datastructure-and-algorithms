@@ -107,3 +107,4 @@ class TestLinkedBinaryTree:
         assert self.linked_binary_tree.delete(
                 self.linked_binary_tree.left(self.linked_binary_tree.root())
         ) == 23
+        assert self.linked_binary_tree.left(self.linked_binary_tree.root()).element() == 27

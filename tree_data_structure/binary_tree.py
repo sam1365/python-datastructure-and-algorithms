@@ -193,7 +193,7 @@ class LinkedBinaryTree(AbstractBinaryTree):
         if node._left is not None:
             raise ValueError("Left child already exists")
 
-        node._left = BinaryTreeNode(e)
+        node._left = BinaryTreeNode(e, parent=node)
         self._size += 1
         return self._make_position(node._left)
 
@@ -210,7 +210,7 @@ class LinkedBinaryTree(AbstractBinaryTree):
         if node._right is not None:
             raise ValueError("Right child already exists")
 
-        node._right = BinaryTreeNode(e)
+        node._right = BinaryTreeNode(e, parent=node)
         self._size += 1
         return self._make_position(node._right)
 

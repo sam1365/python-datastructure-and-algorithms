@@ -68,3 +68,23 @@ class TestLinkedBinaryTree:
         assert isinstance(self.linked_binary_tree.left(self.linked_binary_tree.root()), BinaryTreePosition)
         assert self.linked_binary_tree.parent(self.linked_binary_tree.left(self.linked_binary_tree.root())) is not None
         assert self.linked_binary_tree.parent(self.linked_binary_tree.right(self.linked_binary_tree.root())) is not None
+
+    def test_delete_leaf(self):
+        assert self.linked_binary_tree.root() is None
+        self.linked_binary_tree.add_root(17)
+        assert self.linked_binary_tree.root() is not None
+        self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 23)
+        self.linked_binary_tree.add_left(
+            self.linked_binary_tree.left(self.linked_binary_tree.root()),
+            27
+        )
+        assert self.linked_binary_tree.left(
+            self.linked_binary_tree.left(self.linked_binary_tree.root())).element() == 27
+        assert self.linked_binary_tree.number_of_children(
+            self.linked_binary_tree.left(
+                self.linked_binary_tree.left(self.linked_binary_tree.root()))
+        ) == 0
+        assert self.linked_binary_tree.delete(
+            self.linked_binary_tree.left(
+                self.linked_binary_tree.left(self.linked_binary_tree.root()))
+        ) == 27

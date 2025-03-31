@@ -124,7 +124,7 @@ class TestLinkedBinaryTree:
 
     def test_attach_working(self):
         """Test attaching two trees to a node"""
-        
+
         tree1 = LinkedBinaryTree()
         tree2 = LinkedBinaryTree()
         self.linked_binary_tree.add_root(1)
@@ -133,3 +133,16 @@ class TestLinkedBinaryTree:
         self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)
         assert self.linked_binary_tree.left(self.linked_binary_tree.root()).element() == 2
         assert self.linked_binary_tree.right(self.linked_binary_tree.root()).element() == 3
+
+    def test_attach_non_leaf(self):
+        """Test attaching two trees to a non leaf node"""
+
+        tree1 = LinkedBinaryTree()
+        tree2 = LinkedBinaryTree()
+        self.linked_binary_tree.add_root(1)
+        self.linked_binary_tree.add_right(self.linked_binary_tree.root(),
+                                          5)
+        tree1.add_root(2)
+        tree2.add_root(3)
+        with pytest.raises(Exception, match='Position must be leaf'):
+            self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)

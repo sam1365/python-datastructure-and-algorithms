@@ -108,3 +108,16 @@ class TestLinkedBinaryTree:
                 self.linked_binary_tree.left(self.linked_binary_tree.root())
         ) == 23
         assert self.linked_binary_tree.left(self.linked_binary_tree.root()).element() == 27
+
+    def test_delete_parent_with_two_children(self):
+        """Test of deleting a node with two children."""
+        
+        assert self.linked_binary_tree.root() is None
+        self.linked_binary_tree.add_root(17)
+        assert self.linked_binary_tree.root() is not None
+        self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 23)
+        self.linked_binary_tree.add_right((self.linked_binary_tree.root()),
+            27
+        )
+        with pytest.raises(Exception, match='Position has two children'):
+            self.linked_binary_tree.delete(self.linked_binary_tree.root())

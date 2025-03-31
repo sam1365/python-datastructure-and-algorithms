@@ -146,3 +146,18 @@ class TestLinkedBinaryTree:
         tree2.add_root(3)
         with pytest.raises(Exception, match='Position must be leaf'):
             self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)
+
+    def test_attach_different_tree_types(self):
+
+        class OtherBinaryTree(LinkedBinaryTree):
+            pass
+
+        tree1 = OtherBinaryTree()
+        tree2 = LinkedBinaryTree()
+
+        self.linked_binary_tree.add_root(1)
+        tree1.add_root(2)
+        tree2.add_root(3)
+
+        with pytest.raises(Exception, match='Trees must have same type'):
+            self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)

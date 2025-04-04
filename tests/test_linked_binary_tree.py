@@ -163,6 +163,8 @@ class TestLinkedBinaryTree:
             self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)
 
     def test_preorder(self):
+        """Test preorder traversal of a binary tree"""
+        
         self.linked_binary_tree.add_root(1)
         left = self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 2)
         right = self.linked_binary_tree.add_right(self.linked_binary_tree.root(), 3)

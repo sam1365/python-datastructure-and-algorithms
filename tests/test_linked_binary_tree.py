@@ -196,3 +196,14 @@ class TestLinkedBinaryTree:
         self.linked_binary_tree.add_right(left, 7)
         breadthfirst_result = [p.element() for p in self.linked_binary_tree.breadthfirst()]
         assert breadthfirst_result == [1, 2, 3, 5, 7]
+
+    def test_inorder(self):
+        """Test inorder traversal of a binary tree"""
+
+        self.linked_binary_tree.add_root(1)
+        left = self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 2)
+        right = self.linked_binary_tree.add_right(self.linked_binary_tree.root(), 3)
+        self.linked_binary_tree.add_left(left, 5)
+        self.linked_binary_tree.add_right(left, 7)
+        inorder_result = [p.element() for p in self.linked_binary_tree.inorder()]
+        assert inorder_result == [5, 2, 7, 1, 3]

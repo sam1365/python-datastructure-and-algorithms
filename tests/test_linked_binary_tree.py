@@ -183,8 +183,8 @@ class TestLinkedBinaryTree:
         self.linked_binary_tree.add_left(left, 5)
         self.linked_binary_tree.add_right(left, 7)
 
-        preorder_result = [p.element() for p in self.linked_binary_tree.postorder()]
-        assert preorder_result == [5, 7, 2, 3, 1]
+        postorder_result = [p.element() for p in self.linked_binary_tree.postorder()]
+        assert postorder_result == [5, 7, 2, 3, 1]
 
     def test_breadthfirst(self):
         """Test breadth-first traversal of a binary tree"""

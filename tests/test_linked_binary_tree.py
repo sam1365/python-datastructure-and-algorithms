@@ -185,3 +185,14 @@ class TestLinkedBinaryTree:
 
         preorder_result = [p.element() for p in self.linked_binary_tree.postorder()]
         assert preorder_result == [5, 7, 2, 3, 1]
+
+    def test_breadthfirst(self):
+        """Test breadth-first traversal of a binary tree"""
+
+        self.linked_binary_tree.add_root(1)
+        left = self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 2)
+        right = self.linked_binary_tree.add_right(self.linked_binary_tree.root(), 3)
+        self.linked_binary_tree.add_left(left, 5)
+        self.linked_binary_tree.add_right(left, 7)
+        breadthfirst_result = [p.element() for p in self.linked_binary_tree.breadthfirst()]
+        assert breadthfirst_result == [1, 2, 3, 5, 7]

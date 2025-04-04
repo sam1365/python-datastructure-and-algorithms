@@ -38,7 +38,8 @@ class AbstractBinaryTree(AbstractTree):
     def children(self, p):
         """Return position of p's children."""
 
-        if self.right(p) is not None:
-            yield self.right(p)
         if self.left(p) is not None:
             yield self.left(p)
+
+        if self.right(p) is not None:
+            yield self.right(p)

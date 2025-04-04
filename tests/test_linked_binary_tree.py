@@ -148,7 +148,7 @@ class TestLinkedBinaryTree:
             self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)
 
     def test_attach_different_tree_types(self):
-
+        """Test attaching two trees of different types to a node of the binary tree"""
         class OtherBinaryTree(LinkedBinaryTree):
             pass
 
@@ -161,3 +161,13 @@ class TestLinkedBinaryTree:
 
         with pytest.raises(Exception, match='Trees must have same type'):
             self.linked_binary_tree.attach(self.linked_binary_tree.root(), tree1, tree2)
+
+    def test_preorder(self):
+        self.linked_binary_tree.add_root(1)
+        left = self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 2)
+        right = self.linked_binary_tree.add_right(self.linked_binary_tree.root(), 3)
+        self.linked_binary_tree.add_left(left, 5)
+        self.linked_binary_tree.add_right(left, 7)
+
+        preorder_result = [p.element() for p in self.linked_binary_tree.preorder()]
+        assert preorder_result == [1, 2, 5, 7, 3]

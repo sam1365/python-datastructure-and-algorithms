@@ -299,7 +299,7 @@ class LinkedBinaryTree(AbstractBinaryTree):
         """Preorder traversal of subtree routed at position p."""
 
         yield p
-        for child in p.children(p):
+        for child in self.children(p):
             for result in self._preorder_subtree(child):
                 yield result
 
@@ -313,7 +313,7 @@ class LinkedBinaryTree(AbstractBinaryTree):
     def _postorder_subtree(self, p):
         """Postorder traversal of subtree routed at position p."""
 
-        for child in p.children(p):
+        for child in self.children(p):
             for result in self._postorder_subtree(child):
                 yield result
         yield p
@@ -327,7 +327,7 @@ class LinkedBinaryTree(AbstractBinaryTree):
             while not linked_queue.is_empty():
                 p = linked_queue.dequeue()
                 yield p
-                for child in p.children(p):
+                for child in self.children(p):
                     linked_queue.enqueue(child)
 
     def inorder(self):

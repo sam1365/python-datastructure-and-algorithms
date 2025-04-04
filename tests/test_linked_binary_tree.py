@@ -175,7 +175,7 @@ class TestLinkedBinaryTree:
         assert preorder_result == [1, 2, 5, 7, 3]
 
     def test_postorder(self):
-        """Test preorder traversal of a binary tree"""
+        """Test postorder traversal of a binary tree"""
 
         self.linked_binary_tree.add_root(1)
         left = self.linked_binary_tree.add_left(self.linked_binary_tree.root(), 2)

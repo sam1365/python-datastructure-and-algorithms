@@ -15,8 +15,8 @@ class DoublyLinkedNode:
         self.prev = prev_node
 
 
-class DoublyLinkedList:
-    """Doubly Linked List Data Structure
+class BaseDoubleLinkedList:
+    """Base Class for Doubly Linked List Data Structure
 
     Attributes:
         _sentinel_head: sentinel head of doubly linked list
@@ -30,10 +30,6 @@ class DoublyLinkedList:
         _insert_between_nodes(self, data, previous_node, next_node):
             Create new node for data and insert it between previous node and next node
         _remove_node(self, node): Remove node from doubly linked list
-        insert_at_beginning(self, data): Insert data at the beginning of doubly linked list
-        insert_at_end(self, data): Insert data at the end of doubly linked list
-        remove_at_beginning(self, node): Remove node at the beginning of doubly linked list
-        remove_at_end(self, node): Remove node at the end of doubly linked list
     """
 
     def __init__(self):
@@ -88,6 +84,16 @@ class DoublyLinkedList:
         next_node.prev = previous_node
         self._size -= 1
         return node.data
+
+class DoublyLinkedList(BaseDoubleLinkedList):
+    """Doubly Linked List Data Structure
+
+    Methods:
+        insert_at_beginning(self, data): Insert data at the beginning of doubly linked list
+        insert_at_end(self, data): Insert data at the end of doubly linked list
+        remove_at_beginning(self, node): Remove node at the beginning of doubly linked list
+        remove_at_end(self, node): Remove node at the end of doubly linked list
+    """
 
     def insert_at_beginning(self, data):
         """Insert data at the beginning of doubly linked list"""

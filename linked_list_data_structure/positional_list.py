@@ -77,6 +77,9 @@ class PositionalList(BaseDoubleLinkedList):
         node = super()._insert_between_nodes(e, predecessor, successor)
         return self._make_position(node)
 
+    def add_first(self, e):
+        return self._insert_between(e, self._sentinel_head, self._sentinel_head.next)
+
     def __iter__(self):
         """Iterates over the positional list."""
 

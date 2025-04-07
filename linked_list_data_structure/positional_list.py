@@ -80,6 +80,13 @@ class PositionalList(BaseDoubleLinkedList):
     def add_first(self, e):
         return self._insert_between(e, self._sentinel_head, self._sentinel_head.next)
 
+    def add_last(self, e):
+        """
+        Add given element as last position in the positional list.
+        """
+
+        return self._insert_between(e, self._sentinel_tail.prev, self._sentinel_tail)
+
     def __iter__(self):
         """Iterates over the positional list."""
 

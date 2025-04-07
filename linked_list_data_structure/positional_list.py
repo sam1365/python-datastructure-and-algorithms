@@ -69,6 +69,14 @@ class PositionalList(BaseDoubleLinkedList):
         node = self._validate_position(position)
         return self._make_position(node.next)
 
+    def _insert_between(self, e, predecessor, successor):
+        """
+        Add element between existing nodes and return new Position.
+        """
+
+        node = super()._insert_between_nodes(e, predecessor, successor)
+        return self._make_position(node)
+
     def __iter__(self):
         """Iterates over the positional list."""
 

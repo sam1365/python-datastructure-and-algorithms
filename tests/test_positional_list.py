@@ -21,7 +21,7 @@ class TestPositionalList:
         assert len(self.positional_list) == 0
         self.positional_list.add_first(31)
         assert len(self.positional_list) == 1
-        self.positional_list.first().element() == 31
+        assert self.positional_list.first().element() == 31
 
     def test_add_last(self):
         """

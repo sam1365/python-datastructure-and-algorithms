@@ -55,7 +55,7 @@ class PositionalList(BaseDoubleLinkedList):
     def last(self):
         """Returns the last position in the positional list."""
 
-        return self._make_position(self._sentinel_tail.next)
+        return self._make_position(self._sentinel_tail.prev)
 
     def before(self, position):
         """Returns position before given position."""

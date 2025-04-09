@@ -18,4 +18,3 @@ class TestPositionalList:
         self.positional_list.add_first(31)
         assert len(self.positional_list) == 1
         self.positional_list.first().element() == 31
-        

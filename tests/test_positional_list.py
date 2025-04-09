@@ -32,7 +32,7 @@ class TestPositionalList:
         self.positional_list.add_first(31)
         self.positional_list.add_last(37)
         assert len(self.positional_list) == 2
-        self.positional_list.last().element() == 37
+        assert self.positional_list.last().element() == 37
 
     def test_before(self):
         """

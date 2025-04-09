@@ -103,6 +103,20 @@ class PositionalList(BaseDoubleLinkedList):
         node = self._validate_position(p)
         return self._insert_between(e, node, node.next)
 
+    def remove(self, p):
+        """Remove position p from the positional list."""
+
+        node = self._validate_position(p)
+        return self._remove_node(node)
+
+    def replace(self, p, e):
+        """Replace element at position p with the given element(e)."""
+
+        node = self._validate_position(p)
+        old_element = node.data
+        node.data = e
+        return old_element
+
     def __iter__(self):
         """Iterates over the positional list."""
 

@@ -44,3 +44,15 @@ class TestPositionalList:
         self.positional_list.add_last(37)
         assert len(self.positional_list) == 2
         self.positional_list.before(self.positional_list.last()).element() == 31
+
+    def test_before(self):
+        """
+        Test after method of PositionalList.
+        """
+
+        assert len(self.positional_list) == 0
+        self.positional_list.add_first(31)
+        self.positional_list.add_last(37)
+        assert len(self.positional_list) == 2
+        self.positional_list.after(self.positional_list.first()).element() == 37
+

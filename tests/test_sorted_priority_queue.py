@@ -17,7 +17,11 @@ class TestUnsortedPriorityQueue:
         self.priority_queue = SortedPriorityQueue()
 
     def test_add(self):
-        
+        """
+        Test if add method in SortedPriorityQueue
+        add new item correctly
+        """
+
         assert len(self.priority_queue) == 0
         self.priority_queue.add(1, 'A')
         self.priority_queue.add(2, 'B')
@@ -26,6 +30,12 @@ class TestUnsortedPriorityQueue:
         assert min_item == (1, 'A')
 
     def test_remove_min(self):
+        """
+        Test if min method in SortedPriorityQueue
+        return correct min item based on min key
+        of the items in the priority queue
+        """
+
         self.priority_queue.add(1, 'A')
         self.priority_queue.add(2, 'B')
         removed_item = self.priority_queue.remove_min()

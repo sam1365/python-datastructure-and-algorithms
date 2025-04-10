@@ -31,8 +31,8 @@ class TestUnsortedPriorityQueue:
 
     def test_remove_min(self):
         """
-        Test if min method in SortedPriorityQueue
-        return correct min item based on min key
+        Test if remove_min method in SortedPriorityQueue
+        remove and return correct min item based on minimum key
         of the items in the priority queue
         """
 

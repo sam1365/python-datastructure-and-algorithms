@@ -73,3 +73,53 @@ class UnsortedPriorityQueue(BasePriorityQueue):
         p = self._find_min()
         item = self._data.remove(p)
         return (item._key, item._value)
+
+
+class SortedPriorityQueue(BasePriorityQueue):
+    """
+    An implementation of min-oriented Priority Queue data structure
+    with sorted list.
+    """
+
+    def __init__(self):
+        self._data = PositionalList()
+
+    def __len__(self):
+        return len(self._data)
+
+    def add(self, key, value):
+        """
+        Add a key, value pair as new item to the priority queue.
+        """
+
+        newest = self._Item(key, value)
+        walk = self._data.last()
+        while walk is not None and newest < walk.element():
+            walk =self._data.before(walk)
+        if walk is None:
+            self._data.add_first(newest)
+        else:
+            self._data.add_after(walk, newest)
+
+    def min(self):
+        """
+        Return tuple with  minimum key.
+        """
+
+        if self.is_empty():
+            raise ValueError("Priority queue is empty")
+        p = self._data.first()
+        item = p.element()
+        return (item._key, item._value)
+
+    def remove_min(self):
+        """
+        Remove item with minimum key from the priority queue
+        and return tuple created  by the removed item.
+        """
+
+        if self.is_empty():
+            raise ValueError("Priority queue is empty")
+
+        item = self._data.remove(self._data.first())
+        return (item._key, item._value)
